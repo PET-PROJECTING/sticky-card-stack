@@ -1,0 +1,39 @@
+/* Wrapper creates scroll length; section sticks inside it. All selectors under .scs-wrap for specificity. */
+.scs-wrap {
+  position: relative;
+}
+
+.scs-wrap .scs-stack {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  width: 100%;
+}
+
+.scs-wrap .scs-stack .scs-stack-inner {
+  position: absolute;
+  inset: 0;
+  perspective: 850px;
+}
+
+.scs-wrap .scs-stack .scs-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+@media (max-width: 1024px) {
+  .scs-wrap .scs-stack .scs-card {
+    width: calc(100% - 4rem);
+    height: 75%;
+  }
+}
